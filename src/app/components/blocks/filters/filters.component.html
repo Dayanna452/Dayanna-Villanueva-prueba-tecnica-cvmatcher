@@ -1,0 +1,35 @@
+<form class="filters-form">
+  <mat-form-field class="employee-field">
+    <mat-icon matTextPrefix>search</mat-icon>
+    <input
+      type="text"
+      placeholder="Buscar empleo..."
+      aria-label="employee"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="location-field">
+    <mat-icon matTextPrefix>location_on</mat-icon>
+    <input
+      type="text"
+      placeholder="Lugar"
+      aria-label="location"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  <button mat-flat-button>Buscar</button>
+</form>
