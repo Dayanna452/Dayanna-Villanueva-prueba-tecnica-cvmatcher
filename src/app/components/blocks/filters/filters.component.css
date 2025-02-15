@@ -1,0 +1,27 @@
+.filters-form {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 46% auto 46% auto;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 4px;
+  padding-right: 16px;
+  button {
+    height: 36px;
+    border-radius: 4px;
+  }
+}
+
+mat-form-field {
+  height: 56px;
+  min-height: auto;
+}
+
+.vertical-divider {
+  height: 35px;
+  border-left: 2px solid #e0e0e0;
+  display: inline-block;
+}
+
+::ng-deep .mdc-notched-outline .mat-mdc-notch-piece {
+  border: none !important;
+}
