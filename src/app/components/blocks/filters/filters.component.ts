@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { JOB_FILTER, LOCATION_FILTER } from '../../../../mocks/filters';
 
 @Component({
   selector: 'app-filters',
@@ -25,22 +26,37 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './filters.component.css',
 })
 export class FiltersComponent implements OnInit {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions!: Observable<string[]>;
+  jobControl = new FormControl('');
+  locationControl = new FormControl('');
+  jobs: { id: string; label: string }[] = JOB_FILTER;
+  locations: { id: string; label: string }[] = LOCATION_FILTER;
+  filteredJobs!: Observable<{ id: string; label: string }[]>;
+  filteredLocations!: Observable<{ id: string; label: string }[]>;
+
+  constructor() {}
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredLocations = this.locationControl.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value || ''))
+      map((value) => this._locationFilter(value || ''))
+    );
+    this.filteredJobs = this.jobControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._jobFilter(value || ''))
     );
   }
 
-  private _filter(value: string): string[] {
+  private _jobFilter(value: string): { id: string; label: string }[] {
     const filterValue = value.toLowerCase();
+    return this.jobs.filter((job) =>
+      job.label.toLowerCase().includes(filterValue)
+    );
+  }
 
-    return this.options.filter((option) =>
-      option.toLowerCase().includes(filterValue)
+  private _locationFilter(value: string): { id: string; label: string }[] {
+    const filterValue = value.toLowerCase();
+    return this.locations.filter((location) =>
+      location.label.toLowerCase().includes(filterValue)
     );
   }
 }

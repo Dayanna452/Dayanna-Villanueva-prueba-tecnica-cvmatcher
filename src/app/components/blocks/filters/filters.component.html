@@ -6,12 +6,12 @@
       placeholder="Buscar empleo..."
       aria-label="employee"
       matInput
-      [formControl]="myControl"
-      [matAutocomplete]="auto"
+      [formControl]="jobControl"
+      [matAutocomplete]="jobauto"
     />
-    <mat-autocomplete #auto="matAutocomplete">
-      @for (option of filteredOptions | async; track option) {
-      <mat-option [value]="option">{{ option }}</mat-option>
+    <mat-autocomplete #jobauto="matAutocomplete">
+      @for (jobs of filteredJobs | async; track jobs) {
+      <mat-option [value]="jobs.label">{{ jobs.label }}</mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>
@@ -23,12 +23,12 @@
       placeholder="Lugar"
       aria-label="location"
       matInput
-      [formControl]="myControl"
-      [matAutocomplete]="auto"
+      [formControl]="locationControl"
+      [matAutocomplete]="locationauto"
     />
-    <mat-autocomplete #auto="matAutocomplete">
-      @for (option of filteredOptions | async; track option) {
-      <mat-option [value]="option">{{ option }}</mat-option>
+    <mat-autocomplete #locationauto="matAutocomplete">
+      @for (location of filteredLocations | async; track location) {
+      <mat-option [value]="location.label">{{ location.label }}</mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>

@@ -17,7 +17,8 @@ mat-form-field {
 }
 
 .vertical-divider {
-  height: 35px;
+  width: 35px;
+  transform: rotate(90deg);
   border-left: 2px solid #e0e0e0;
   display: inline-block;
 }
