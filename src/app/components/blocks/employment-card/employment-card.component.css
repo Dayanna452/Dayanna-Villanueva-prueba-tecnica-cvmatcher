@@ -1,0 +1,41 @@
+.employment-card__container {
+  height: auto;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.employment-card__content {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .employment-card__info {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+    }
+
+    .location {
+      font-size: 12px;
+      color: #6c757d;
+    }
+  }
+}
+
+.employment-card__footer {
+  display: inline-block;
+  margin-top: 20px;
+}
