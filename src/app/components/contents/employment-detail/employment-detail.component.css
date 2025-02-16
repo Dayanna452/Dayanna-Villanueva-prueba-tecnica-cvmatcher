@@ -1,0 +1,78 @@
+.employment-detail__container {
+  border-radius: 4px;
+  padding: 40px 25px 25px 25px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  mat-divider {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-color: #d0d6db;
+  }
+}
+
+.employment-detail__header {
+  .main-info {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .employment-card__info {
+      display: inline-flex;
+      flex-direction: column;
+      row-gap: 5px;
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .subtitle,
+      .modality,
+      .location {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 4px;
+        font-size: 14px;
+
+        mat-icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .main-info-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .post-date {
+      font-size: 12px;
+    }
+
+    button {
+      height: 36px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.employment-detailt__body {
+  .ad-ribbon {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0d6db;
+
+    b {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
